@@ -2,18 +2,24 @@
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
 import React, { useState } from "react";
+import Search from './components/search.js';
 
 function App() {
-  const [inputText, setInputText] = useState("");
+  // const [inputText, setInputText] = useState("");
+  // function search() {
+  //   var searchInput = document.getElementById("search-input").value.toLowerCase()
+  //   setInputText(searchInput)
+  // }
+
 
   return (
     <div className="App">
       <header className="App-header">
 
-        <p>
+        {/* <p>
           Search That Lyric
         </p>
         <Form className="d-flex">
@@ -24,10 +30,11 @@ function App() {
             aria-label="Search"
             id="search-input"
           />
-          <Button onClick={() => { setInputText(document.getElementById("search-input").value) }} variant="outline-success">Search</Button>
+          <Button onClick={() => { search() }} variant="outline-success">Search</Button>
         </Form>
 
-        <p>{inputText}</p>
+        <p>{inputText}</p> */}
+        <Search />
 
 
 
