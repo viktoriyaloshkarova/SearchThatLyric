@@ -5,48 +5,34 @@ import spinner from './spinner.gif';
 
 export function Api() {
 
-
     const [state, setState] = useState(null);
 
+    async function fetchData() {
+        let response = await axios.get(`http://api.musixmatch.com/ws/1.1/track.search?q_artist=justin bieber&page_size=3&page=1&s_track_rating=desc&apikey=${
+            process.env.REACT_APP_KEY
+            }`)
+        let data = await response.data
+        setState(data)
+    }
+
     useEffect(() => {
-        axios
-        .get(
-            `http://api.musixmatch.com/ws/1.1/track.search?q_artist=justin bieber&page_size=3&page=1&s_track_rating=desc&apikey=${
-          process.env.REACT_APP_KEY
-        }`
-        )
-        .then(response => {
-            console.log(response.data);
-            setState(
-                response.data
+        fetchData()
+    }, [])
 
-            );
-        })
-        .catch(err => console.log(err));
-    }, []);
+    console.log(state)
 
-    if (state.message === undefined) {
+    if (state === null) {
         return (
-            <div>
-                <img
-                    src={spinner}
-                    alt="Loading..."
-                    style={{ width: '200px', margin: ' 40px auto', display: 'block' }}
-                />
-            </div>
+            <div>undefined</div>
         )
     }
     else {
         return (
             <div>
-                {/* <h1>{ state.message.body}</h1> */}
-                {/* <h1>{state.heading}</h1>
-            <p>{state.track_list}</p> */}
+                <p>{state.message.body.track_list.map(item => (item.track.track_name)) } </p>
             </div>
-            // <div>
-            //         hii
-            // </div>
-        );
+        )
     }
+
 }
 
