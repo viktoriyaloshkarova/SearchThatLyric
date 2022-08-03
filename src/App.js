@@ -1,15 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import Search from './components/search/search.js';
+import Description from './components/description/description.js';
+import Header from './components/header/header.js';
+import Footer from './components/footer/footer.js';
+
 function App() {
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Search That Lyric
-        </p>
-
-      </header>
+      <Header />
+      <div className="App-header">
+        <Description />
+        <Search />
+      </div>
+      <Footer />
     </div>
   );
 }
