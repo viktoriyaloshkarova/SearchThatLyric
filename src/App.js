@@ -7,9 +7,11 @@ import Search from './components/search/search.js';
 import Description from './components/description/description.js';
 import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
+import { Api } from './Api';
 
 function App() {
 
+  Api()
 
   return (
     <div className="App">
