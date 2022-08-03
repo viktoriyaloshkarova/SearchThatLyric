@@ -1,0 +1,15 @@
+.container {
+    width: 70%;
+    max-width: 900px;
+}
+.form-control {
+    line-height: 2;
+    font-size: 23px;
+}
+
+.btn {
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 23px;
+    color: white;
+}

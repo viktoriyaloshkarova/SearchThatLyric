@@ -1,0 +1,11 @@
+footer {
+    height: 7vh;
+    width: 100%;
+    text-align: right;
+    background: #7e7ef5;
+}
+
+footer p {
+    line-height: 7vh;
+    padding-right: 2em;
+}

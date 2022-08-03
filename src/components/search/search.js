@@ -1,3 +1,5 @@
+import './search.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -13,10 +15,8 @@ function Search() {
 
     return (
 
-        <div>
-            <p>
-                Search That Lyric
-        </p>
+        <div className="container">
+
             <Form className="d-flex">
                 <Form.Control
                     type="search"
