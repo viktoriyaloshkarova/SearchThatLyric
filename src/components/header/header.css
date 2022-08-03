@@ -1,0 +1,13 @@
+header {
+    width: 100%;
+    background: rgb(255, 255, 100);
+    padding-left: 2.5em;
+    height: 15vh;
+    padding-top: 2.1em;
+    background-image: linear-gradient(#0F0F2F, #141447);
+}
+
+h1 {
+    line-height: 15vh;
+    color: white;
+}
