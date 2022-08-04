@@ -17,9 +17,10 @@ function Search(props) {
         //convert input text to lower case
         // var lowerCase = e.target.value.toLowerCase();
         // setInputText(lowerCase);
-        console.log(e.target)
+        //console.log(e.target)
         var searchInput = document.getElementById("search-input").value.toLowerCase()
         setInputText(searchInput)
+        props.saveLyricInput(searchInput)
         props.switchToResults()
     };
 
