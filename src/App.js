@@ -62,7 +62,7 @@ function Results(props) {
   return (
     <div className="App">
       <Header />
-      <div className="App-header">
+      <div className="App-content">
         <Api lyricInput={props.lyricInput} />
         <p style={{ color: "white" }}>{props.lyricInput}</p>
       </div>
