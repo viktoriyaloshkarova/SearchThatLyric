@@ -4,6 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from "react";
 import Search from './components/search/search.js';
+import Api from './Api.js';
 import Description from './components/description/description.js';
 import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
@@ -62,6 +63,7 @@ function Results(props) {
     <div className="App">
       <Header />
       <div className="App-header">
+        <Api lyricInput={props.lyricInput} />
         <p style={{ color: "white" }}>{props.lyricInput}</p>
       </div>
       <Footer />

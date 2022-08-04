@@ -1,12 +1,13 @@
 import React from 'react';
 
-export default function Song(data) {
-    console.log(data)
+export default function Song(props) {
+    console.log(props)
+
     return (
         <div>
-            Song: {data.track_name}
+            Song: {props.song.track_name}
             /
-            By: {data.artist_name}
+            By: {props.song.artist_name}
 
         </div>
     )

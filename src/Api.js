@@ -3,13 +3,12 @@ import React, { useState, useEffect } from "react";
 import Song from "./components/song/song.js"
 import spinner from "./spinner.gif"
 
-export function Api() {
+export default function Api(props) {
 
     const [state, setState] = useState(null);
 
     async function fetchData() {
-        let user_input = "love"
-        let response = await axios.get(`http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${user_input}&page_size=100&page=1&s_track_rating=desc&apikey=${
+        let response = await axios.get(`http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${props.lyricInput}&page_size=100&page=1&s_track_rating=desc&apikey=${
             process.env.REACT_APP_KEY
             }`)
         let data = await response.data
@@ -36,8 +35,7 @@ export function Api() {
         return (
             <div>
                 {state.message.body.track_list.map(item => (
-
-                    Song(item.track)
+                   <Song song={item.track} />
                 ))}
             </div>
         )
