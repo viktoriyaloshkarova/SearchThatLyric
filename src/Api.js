@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Song from "./components/song/song.js"
-import spinner from "./spinner.gif"
+import spinner from "./loading.gif"
 
 export default function Api(props) {
 
