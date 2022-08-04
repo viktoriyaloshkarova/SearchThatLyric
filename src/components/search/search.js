@@ -5,19 +5,31 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import React, { useState } from "react";
 
-function Search() {
+function Search(props) {
     const [inputText, setInputText] = useState("");
-    function search() {
+    // function search() {
+    //     console.log(e);
+    //     var searchInput = document.getElementById("search-input").value.toLowerCase()
+    //     setInputText(searchInput)
+    // }
+    let search = (e) => {
+        e.preventDefault()
+        //convert input text to lower case
+        // var lowerCase = e.target.value.toLowerCase();
+        // setInputText(lowerCase);
+        console.log(e.target)
         var searchInput = document.getElementById("search-input").value.toLowerCase()
         setInputText(searchInput)
-    }
+        props.switchToResults()
+    };
+
 
 
     return (
 
         <div className="container">
 
-            <Form className="d-flex">
+            <Form onSubmit={search} className="d-flex">
                 <Form.Control
                     type="search"
                     placeholder="Search"
@@ -25,7 +37,7 @@ function Search() {
                     aria-label="Search"
                     id="search-input"
                 />
-                <Button onClick={() => { search() }} variant="outline-success">Search</Button>
+                <Button as="input" type="submit" value="Search" />
             </Form>
 
             <p>{inputText}</p>
