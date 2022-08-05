@@ -1,8 +1,13 @@
 #small-search-input {
-    line-height: .75;
+    line-height: 1;
 }
 
 .small-form {
     margin: auto;
-    width: 700px;
+    width: 400px;
+    font-size: 15px;
+}
+
+.small-form .btn {
+    font-size: 15px;
 }

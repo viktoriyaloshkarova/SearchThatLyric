@@ -30,7 +30,7 @@ function Search(props) {
 
         <div className="container">
 
-            <Form onSubmit={search} className="d-flex">
+            <Form onSubmit={search} className="d-flex big-search">
                 <Form.Control
                     type="search"
                     placeholder="Search"
