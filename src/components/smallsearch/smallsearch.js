@@ -33,7 +33,7 @@ function SmallSearch(props) {
 
         <div>
 
-            <Form onSubmit={search} className="d-flex">
+            <Form onSubmit={search} className="d-flex small-form">
                 <Form.Control
                     type="search"
                     defaultValue={lyric}

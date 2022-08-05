@@ -5,11 +5,11 @@ export default function Song(props) {
     //console.log(props)
 
     return (
-        <div class="cards">
-            <div class="card">
-                <p class="title">{props.song.track_name} </p>
-            <p class="artist">By: {props.song.artist_name}</p>
-                </div>
+        <div className="cards">
+            <div className="card">
+                <p className="title">{props.song.track_name} </p>
+                <p className="artist">By: {props.song.artist_name}</p>
+            </div>
 
         </div>
     )

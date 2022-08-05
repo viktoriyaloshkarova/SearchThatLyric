@@ -9,8 +9,7 @@ export default function Api(props) {
     const [state, setState] = useState(null);
 
     async function fetchData() {
-        let response = await axios.get(`http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${props.lyricInput}&page_size=100&page=1&s_track_rating=desc&apikey=${
-            process.env.REACT_APP_KEY
+        let response = await axios.get(`http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${props.lyricInput}&page_size=100&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_KEY
             }`)
         let data = await response.data
         setState(data)
@@ -24,7 +23,7 @@ export default function Api(props) {
 
     if (state === null) {
         return (
-            <div class="no-result">
+            <div className="no-result">
                 <img
                     src={spinner}
                     alt="Loading.."
@@ -36,12 +35,12 @@ export default function Api(props) {
             </div>
         )
     }
-    else if (state.message.body.track_list.length === 0){
+    else if (state.message.body.track_list.length === 0) {
 
         return (
-        <div class="no-result">
+            <div className="no-result">
 
-            <h3 style={{ color: "white" }}>No Result Found </h3>
+                <h3 style={{ color: "white" }}>No Result Found </h3>
             </div>
         )
 
@@ -49,9 +48,9 @@ export default function Api(props) {
     }
     else {
         return (
-            <div class="page">
+            <div className="page">
                 {state.message.body.track_list.map(item => (
-                   <Song song={item.track} />
+                    <Song song={item.track} />
                 ))}
             </div>
         )
