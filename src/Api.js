@@ -1,4 +1,5 @@
 import axios from "axios";
+import './Api.css'
 import React, { useState, useEffect } from "react";
 import Song from "./components/song/song.js"
 import spinner from "./loading.gif"
@@ -23,17 +24,32 @@ export default function Api(props) {
 
     if (state === null) {
         return (
-            <div>
+            <div class="no-result">
                 <img
                     src={spinner}
                     alt="Loading.."
+                    width="100"
+                    heigh="auto"
+
+
                 />
             </div>
         )
     }
+    else if (state.message.body.track_list.length === 0){
+
+        return (
+        <div class="no-result">
+
+            <h3 style={{ color: "white" }}>No Result Found </h3>
+            </div>
+        )
+
+
+    }
     else {
         return (
-            <div>
+            <div class="page">
                 {state.message.body.track_list.map(item => (
                    <Song song={item.track} />
                 ))}

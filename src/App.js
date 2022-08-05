@@ -63,7 +63,7 @@ function Results(props) {
   return (
     <div className="App">
       <Header />
-      <div className="App-header" style={{ color: "white" }}>
+      <div className="App-content">
         <SmallSearch switchToHome={props.switchToHome} lyricInput={props.lyricInput} switchToResults={props.switchToResults} saveLyricInput={props.saveLyricInput} />
         <Api lyricInput={props.lyricInput} />
         <p>{props.lyricInput}</p>
