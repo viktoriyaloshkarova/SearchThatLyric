@@ -62,7 +62,8 @@ function Home(props) {
 function Results(props) {
   return (
     <div className="App">
-      <Header />
+      <Header style={{ paddingBottom: "15em" }} />
+
       <div className="App-content">
         <SmallSearch switchToHome={props.switchToHome} lyricInput={props.lyricInput} switchToResults={props.switchToResults} saveLyricInput={props.saveLyricInput} />
         <Api lyricInput={props.lyricInput} />
