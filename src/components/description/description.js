@@ -11,7 +11,7 @@ function Description() {
 
         <div className="description">
             <p>
-                Find any song with just the lyrics.
+                Find any song with just the lyrics
             </p>
         </div>
 
