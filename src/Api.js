@@ -40,7 +40,7 @@ export default function Api(props) {
         return (
             <div className="no-result">
 
-                <h3 style={{ color: "white" }}>No Result Found </h3>
+                <h3 style={{ color: "white" }}>No Results Found </h3>
             </div>
         )
 
