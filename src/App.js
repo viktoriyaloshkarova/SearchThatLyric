@@ -4,6 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from "react";
 import Search from './components/search/search.js';
+import SmallSearch from './components/smallsearch/smallsearch.js';
 import Api from './Api.js';
 import Description from './components/description/description.js';
 import Header from './components/header/header.js';
@@ -24,17 +25,17 @@ function App() {
     navigate('/results');
   };
 
-  // const navigateHome = () => {
-  //   // 👇️ navigate to /
-  //   navigate('/');
-  // };
+  const navigateHome = () => {
+    // 👇️ navigate to /
+    navigate('/');
+  };
 
   return (
 
     <div>
       <Routes>
         <Route path="/" element={<Home switchToResults={navigateToResults} lyricInput={savedInputText} saveLyricInput={setSavedInputText} />} />
-        <Route path="/results" element={<Results lyricInput={savedInputText} saveLyricInput={setSavedInputText} />} />
+        <Route path="/results" element={<Results switchToHome={navigateHome} lyricInput={savedInputText} saveLyricInput={setSavedInputText} switchToResults={navigateToResults} />} />
       </Routes>
     </div>
 
@@ -63,8 +64,9 @@ function Results(props) {
     <div className="App">
       <Header />
       <div className="App-content">
+        <SmallSearch switchToHome={props.switchToHome} lyricInput={props.lyricInput} switchToResults={props.switchToResults} saveLyricInput={props.saveLyricInput} />
         <Api lyricInput={props.lyricInput} />
-        <p style={{ color: "white" }}>{props.lyricInput}</p>
+        <p>{props.lyricInput}</p>
       </div>
       <Footer />
 

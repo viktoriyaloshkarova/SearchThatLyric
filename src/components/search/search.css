@@ -1,6 +1,7 @@
 .container {
     width: 70%;
     max-width: 900px;
+    padding-bottom: 200px;
 }
 .form-control {
     line-height: 2;

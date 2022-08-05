@@ -2,7 +2,7 @@ import React from 'react';
 import './song.css'
 
 export default function Song(props) {
-    console.log(props)
+    //console.log(props)
 
     return (
         <div class="cards">
